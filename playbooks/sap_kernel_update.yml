@@ -1,8 +1,14 @@
 ---
 - name: Update SAP Kernel
-  hosts: all
+  hosts: sap_servers
+  gather_facts: true
+  become: true
+  serial: 1
 
-  tasks: 
-    - name: SAP Kernel Update Role
-      ansible.builtin.include_role:
-        name: sap_kernel_update
+  roles:
+    - role: sap.sap_operations.sap_kernel_update
+      vars:
+        sap_sid: "{{ sap_sid }}"
+        sap_instance_number: "{{ sap_instance_number }}"
+        sap_kernel_sapexe_sar: "{{ sap_kernel_sapexe_sar }}"
+        sap_kernel_sapexedb_sar: "{{ sap_kernel_sapexedb_sar }}"
