@@ -6,7 +6,7 @@
   serial: 1
 
   roles:
-    - role: sap.sap_operations.sap_kernel_update
+    - role: sap_kernel_update
       vars:
         sap_sid: "{{ sap_sid }}"
         sap_instance_number: "{{ sap_instance_number }}"
