@@ -13,5 +13,5 @@
   tasks: 
     - name: Run Kernel update role
       ansible.builtin.include_role: 
-        name: "roles.sap_kernel_update"
+        name: "sap_kernel_update"
   
