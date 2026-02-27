@@ -1,5 +1,8 @@
 ---
 - name: Update SAP Kernel
-- hosts: all
-  roles:
-    - sap_kernel_update
+  hosts: all
+
+  tasks: 
+    - name: SAP Kernel Update Role
+      ansible.builtin.include_role:
+        name: sap_kernel_update
