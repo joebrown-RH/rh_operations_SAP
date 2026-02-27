@@ -4,11 +4,14 @@
   gather_facts: true
   become: true
   serial: 1
-
-  roles:
-    - role: sap.sap_operations.sap_kernel_update
-      vars:
+  vars:
         sap_sid: "{{ sap_sid }}"
         sap_instance_number: "{{ sap_instance_number }}"
         sap_kernel_sapexe_sar: "{{ sap_kernel_sapexe_sar }}"
-        sap_kernel_sapexedb_sar: "{{ sap_kernel_sapexedb_sar }}"
+        sap_kernel_sapexedb_sar: "{{ sap_kernel_sapexedb_sar }}"  
+
+  tasks: 
+    - name: Run Kernel update role
+      ansible.builtin.include_role: 
+        name: "roles.sap_kernel_update"
+  
