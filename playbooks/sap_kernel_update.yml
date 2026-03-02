@@ -10,8 +10,10 @@
         sap_kernel_sapexe_sar: "{{ sap_kernel_sapexe_sar }}"
         sap_kernel_sapexedb_sar: "{{ sap_kernel_sapexedb_sar }}"  
 
+  roles: 
+    - sap_kernel_update
   tasks: 
     - name: Run Kernel update role
-      ansible.builtin.include_role: 
+      ansible.builtin.import_role: 
         name: "sap_kernel_update"
   
