@@ -1,0 +1,6 @@
+---
+collections: 
+  - name: sap.sap_operations
+  - name: community.general
+  - name: ansible.posix
+  - name: community.crypto
